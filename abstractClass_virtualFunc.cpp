@@ -41,7 +41,7 @@ class B:public A{
 //class with atleast one pure virtual function is called abstract class , we cannot create object from abstract class but 
 // we can derive other classes from abstract class . 
 //But we must override that function in the derived class; otherwise, the derived class will also become an abstract class
-
+//abstract class can have normal functions and variables along with pure virtual functions
 class C{
     public:
      virtual void setData()=0; //pure virtual funtion
