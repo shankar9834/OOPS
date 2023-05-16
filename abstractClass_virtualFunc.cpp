@@ -66,6 +66,13 @@ class E:public C{
     }
 };
 
+class F:public A{
+public:
+  void FsData()
+  {
+        cout<<"printing Fs data without overidding the virtual function in class A"<<endl;
+  }
+};
 
 int main()
 {
@@ -84,4 +91,7 @@ int main()
     E e;
     e.setData();   // this doesnt give error because we have implemented a pure virtual function 
     
+
+    F f;
+    f.FsData();
 }
