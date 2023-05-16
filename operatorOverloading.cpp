@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//runtime polymormphism is achieved by using virtual functions
+//runtime polymormphism is achieved by using virtual functions, method overridding
 //compile time polymorphism is achieved by method overloading , operator overloading
 
 
