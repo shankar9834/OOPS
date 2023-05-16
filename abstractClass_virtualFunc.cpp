@@ -34,7 +34,9 @@ class B:public A{
         cout<<"getting data in B"<<endl;
     }
 
+
 };
+
 
 
 
@@ -45,6 +47,11 @@ class B:public A{
 class C{
     public:
      virtual void setData()=0; //pure virtual funtion
+
+     void anotherFunc()
+     {
+        cout<<"printing another function in C"<<endl;
+     }
 };
 
 
@@ -55,6 +62,22 @@ class D:public C{
   {
     cout<<"printing in D";
   }  
+
+  
+};
+
+class G:public C{
+    public:
+
+    void setData()
+    {
+        cout<<"set data implemented in G"<<endl;
+    }
+
+    void anotherFunc()
+    {
+        cout<<"overidding another function in G"<<endl;
+    }
 };
 
 
@@ -64,6 +87,8 @@ class E:public C{
     {
         cout<<"setting data in E"<<endl;
     }
+
+    
 };
 
 class F:public A{
@@ -74,11 +99,16 @@ public:
   }
 };
 
+
+
 int main()
 {
 
     B b;
     A *p=&b;
+    
+    cout<<"\n************\n";
+
     p->printData();  // calls method in derived class 
     p->getData();    //calls method in base class 
     
@@ -88,10 +118,24 @@ int main()
 
   //  D d;  // this gives error because we havent implemented a pure virtual function in derived class D
     
+   cout<<"\n************\n";
+
     E e;
     e.setData();   // this doesnt give error because we have implemented a pure virtual function 
-    
+    e.anotherFunc(); 
+
+   cout<<"\n************\n";
 
     F f;
     f.FsData();
+
+    cout<<"\n************\n";
+
+    G g;
+    g.setData();
+    g.anotherFunc();
+
+    cout<<"\n************\n";
+
+     
 }
